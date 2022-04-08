@@ -1,0 +1,118 @@
+<div id="root" class="container hidden">
+    <h3 class="page-title">Liste des personnes</h3>
+    <button class="icon-button newPerson" id="mobileNewPerson" data-bs-toggle="modal" data-bs-target="#new_person_modal" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path fill="blueviolet" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+        </svg>
+    </button>
+    <div id="bienvenue"></div>
+    <div id="dates-wrapper">
+
+    </div>
+    <button id="openModalComment" type="button" class="hidden" data-bs-toggle="modal" data-bs-target="#new_comment_modal">
+        open comment modal
+    </button>
+</div>
+<div  class="modal fade" id="new_person_modal" tabindex="-1">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter une personne</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="new-person-spinner" class="modal-spinner hidden spinner-border text-primary" role="status">
+                    <span class="sr-only"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="newPersonTitle">Elements obligatoires</div>
+                    <input class="form-control" id="newPersonFirstName" placeholder="Prénom">
+                    <div class="erreur error-register" id="error-new-person-firstname"></div>
+                    <input class="form-control" id="newPersonLastName" placeholder="Nom">
+                    <div class="erreur error-register" id="error-new-person-lastname"></div>
+                    <div class="container">
+                        <div class="form-check">
+                            <input checked class="form-check-input" type="radio" name="flexRadioDefault" id="newPersonGenderMan" value="M">
+                            <label class="form-check-label" for="newPersonGenderMan">
+                                Homme
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="newPersonGenderWoman" value="W">
+                            <label class="form-check-label" for="newPersonGenderWoman">
+                                Femme
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="newPersonGenderOther" value="O">
+                            <label class="form-check-label" for="newPersonGenderOther">
+                                Autre
+                            </label>
+                        </div>
+                    </div>
+                    <div class="erreur error-register" id="error-new-person-gender"></div>
+
+                    <input class="form-control" type="date" id="newPersonBirthday" placeholder="Prénom">
+                    <div class="erreur error-register" id="error-new-person-birthday"></div>
+                    <div class="newPersonTitle">Elements facultatifs</div>
+
+                    <textarea placeholder="Commentaires" class="form-control" name="" id="newPersonComment"></textarea>
+                    <div id="newPersonConfirm"></div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modalnewpersonclose" data-bs-dismiss="modal">Fermer</button>
+                <button id="newPersonSubmit" type="button" class="btn btn-primary">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div  class="modal fade" id="new_comment_modal" tabindex="-1">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<h5 class="modal-title">Ajouter une personne</h5>-->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="new-comment-spinner" class=" modal-spinner hidden spinner-border text-primary" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" value="" id="newCommentPersonId">
+                    <textarea maxlength="500" placeholder="Commentaires" class="form-control" name="" id="newCommentText"></textarea>
+                    <div class="erreur error-register" id="error-new-comment"></div>
+                    <div id="newCommentConfirm"></div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modalnewcommentclose" data-bs-dismiss="modal">Fermer</button>
+                <button id="newCommentSubmit" type="button" class="btn btn-primary">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="openModalConfirmDelete" type="button" class="hidden" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete"></button>
+
+<div id="modalConfirmDelete" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="confirmDeleteTitle">Etes vous sûr ?</h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button id="modalConfirmSubmit" type="button" class="btn btn-primary">Confirmer</button>
+                <button id="modalConfirmClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

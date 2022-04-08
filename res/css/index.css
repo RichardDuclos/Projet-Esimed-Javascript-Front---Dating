@@ -1,3 +1,167 @@
+
+:root{
+    --primary : blueviolet;
+    --primary-accent : #780ad9;
+    --primary-accent-transparent : rgba(120 10 217 / 50%);
+}
+
 body {
-    margin: 10px;
+}
+
+/*          NAVBAR          */
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+.navbar-nav {
+    width: 100%;
+}
+.nav-item.last {
+    margin-right: auto;
+}
+.nav-link {
+    cursor: pointer;
+}
+
+/*          GENERAL          */
+#loginpassword {
+    margin-top: 10px;
+}
+div#registerConfirm {
+    font-size: 18px;
+}
+.hidden {
+    display: none;
+}
+.icon-button{
+    background: none;
+    border: none;
+    transition: 0.2s;
+}
+.icon-button:hover{
+    filter: brightness(0.6);
+}
+#main-spinner{
+    position: fixed;
+    z-index: 1031; /* High z-index so it is on top of the page */
+    top: 50%;
+    right: 50%; /* or: left: 50%; */
+    margin-top: -1.5rem; /* half of the elements height */
+    margin-right: -1.5rem; /* half of the elements widht */
+    height: 3rem;
+    width: 3rem;
+}
+.erreur {
+    color : red;
+}
+#loginResult{
+    margin-top: 1rem;
+    min-height: 1em;
+}
+#login_modal{
+}
+.modal-spinner{
+    position: absolute;
+    z-index: 1031; /* High z-index so it is on top of the page */
+    top: 50%;
+    right: 50%; /* or: left: 50%; */
+    margin-top: -1.5rem; /* half of the elements height */
+    margin-right: -1.5rem; /* half of the elements widht */
+    height: 3rem;
+    width: 3rem;
+}
+.error-register{
+    min-height: 1em;
+}
+.button{
+    width: fit-content;
+    padding: 7px 25px;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: var(--primary-accent);
+
+}
+.btn-primary
+.page-title{
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+/*              PERSON LIST         */
+.person-card-title {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.person-range {
+    padding-right: 0;
+    padding-left: 0;
+}
+.person-card {
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+.person-trash {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+#mobileNewPerson, #mobileNewMeeting{
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1;
+}
+
+#newPersonRatingControlWrapper{
+    width: fit-content;
+    margin: auto;
+}
+.newPersonTitle{
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3em;
+}
+#newPersonComment{
+    margin-top: 1rem;
+    height: 10rem;
+}
+#newPersonConfirm, #newMeetingConfirm{
+    min-height: 1em;
+    color : green;
+}
+.editPersonCommentButton{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+.comment-content{
+    word-break: break-word;
+}
+#newCommentText{
+    height: 200px;
+}
+.person-gender-row{
+    font-size: 0.8em;
+    margin-bottom: 1rem;
+    margin-top: -0.7rem;
+}
+.gender {
+    text-align: center;
+
+}
+/*          DATE        */
+#new-meeting-star-wrapper {
+    margin: auto;
+    width: fit-content;
+}
+.meeting-comment{
+    margin-top: 1rem;
 }

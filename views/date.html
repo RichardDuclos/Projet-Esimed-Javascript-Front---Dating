@@ -1,0 +1,78 @@
+<div id="root" class="container hidden">
+    <h3 class="page-title">Vos rendez vous</h3>
+    <button class="icon-button newPerson" id="mobileNewMeeting" data-bs-toggle="modal" data-bs-target="#new_meeting_modal" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path fill="blueviolet" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+        </svg>
+    </button>
+    <div id="meetings-wrapper">
+
+    </div>
+</div>
+<div  class="modal fade" id="new_meeting_modal" tabindex="-1">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter une rencontre</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="new-meeting-spinner" class="modal-spinner hidden spinner-border text-primary" role="status">
+                    <span class="sr-only"></span>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="selectPersonMeeting">
+                    </select>
+                    <div class="erreur error-register" ></div>
+
+                    <input class="form-control" id="newMeetingPlace" placeholder="Lieu">
+                    <div class="erreur error-register" id="error-new-meeting-place"></div>
+                    <input class="form-control" id="newMeetingDate" type="datetime-local">
+                    <div class="erreur error-register" id="error-new-meeting-date"></div>
+                    <div id="new-meeting-star-wrapper">
+                        <select id="new-meeting-select-star" class="star-rating">
+                            <option value="">Choisir une note</option>
+                            <option value="5">Excellent !!</option>
+                            <option value="4">J'ai adoré</option>
+                            <option value="3">C'etait bien</option>
+                            <option value="2">Bof</option>
+                            <option value="1">Super nul</option>
+                        </select>
+
+                    </div>
+                    <div class="erreur error-register" id="error-new-meeting-rank"></div>
+
+
+                    <textarea maxlength="500" placeholder="Commentaires" class="form-control" name="" id="newMeetingComment"></textarea>
+                    <div class="erreur error-register" id="error-new-meeting-comment"></div>
+
+                    <div id="newMeetingConfirm"></div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modalnewpersonclose" data-bs-dismiss="modal">Fermer</button>
+                <button id="newMeetingSubmit" type="button" class="btn btn-primary">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="openModalConfirmDelete" type="button" class="hidden" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete"></button>
+
+<div id="modalConfirmDelete" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="confirmDeleteTitle">Etes vous sûr ?</h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button id="modalConfirmSubmit" type="button" class="btn btn-primary">Confirmer</button>
+                <button id="modalConfirmClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
