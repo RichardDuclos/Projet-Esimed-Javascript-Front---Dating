@@ -42,10 +42,11 @@ class BaseController {
         this.errorLoginPassword = document.getElementById("error-login-password");
     }
     loginSubmitHandler() {
+
         let error = false;
         this.errorLoginEmail.innerText = "";
         this.errorLoginPassword.innerText = "";
-
+        this.loginResult.innerText = "";
         if(this.loginEmail.value.trim() === "") {
             error = true;
             this.errorLoginEmail.innerText = "Veuillez renseigner votre adresse email";
